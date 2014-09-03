@@ -1,0 +1,8 @@
+name = Node example
+description = Demonstrates a custom content type and uses the field api.
+core = 7.x
+dependencies[] = image
+files[] = node_example.test
+package = 00 Example modules
+version = BACKDROP_VERSION
+backdrop = 1.x

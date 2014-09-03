@@ -1,5 +1,5 @@
-name = Examples For Developers
-description = A variety of example code for you to learn from and hack upon.
+name = Backdrop Module Examples For Developers
+description = A variety of example modules for you to learn from and hack upon. Ported with minimal changes from the Drupal 7 project "Examples for Developers" - https://www.drupal.org/project/examples
 package = 00 Example modules
 core = 7.x
 version = BACKDROP_VERSION
