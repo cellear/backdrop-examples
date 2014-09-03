@@ -2,10 +2,10 @@
 
 /**
  * @file
- * This is the Form API Tutorial from the handbook.
+ * This is the Form API Tutorial, originally from the Drupal handbook.
  *
  * It goes through 10 form examples of increasing complexity to demonstrate
- * Drupal 7 Form API.
+ * Backdrop Form API.
  *
  * Links are provided inline for the related handbook pages.
  *
@@ -29,7 +29,7 @@
  * @ingroup form_example
  */
 function form_example_tutorial() {
-  return t('This is a set of 10 form tutorials tied to the <a href="http://drupal.org/node/262422">Drupal handbook</a>.');
+  return t('This is a set of 10 form tutorials tied to the <a href="http://drupal.org/node/262422">Drupal handbook</a>. The same Drupal code works essentially unmodified in Backdrop.');
 }
 
 /**
@@ -41,7 +41,7 @@ function form_example_tutorial() {
  * It just creates a very basic form with a textfield.
  *
  * This function is called the "form constructor function". It builds the form.
- * It takes a two arguments, $form and $form_state, but if drupal_get_form()
+ * It takes a two arguments, $form and $form_state, but if backdrop_get_form()
  * sends additional arguments, they will be provided after $form_state.
  *
  * @ingroup form_example
@@ -343,7 +343,7 @@ function form_example_tutorial_7_validate($form, &$form_state) {
  * completion message to the screen.
  */
 function form_example_tutorial_7_submit($form, &$form_state) {
-  drupal_set_message(t('The form has been submitted. name="@first @last", year of birth=@year_of_birth',
+    backdrop_set_message(t('The form has been submitted. name="@first @last", year of birth=@year_of_birth',
     array(
       '@first' => $form_state['values']['first'],
       '@last' => $form_state['values']['last'],
@@ -496,14 +496,14 @@ function form_example_tutorial_8_page_two_back($form, &$form_state) {
  * The page 2 submit handler.
  *
  * This is the final submit handler. Gather all the data together and output
- * it in a drupal_set_message().
+ * it in a backdrop_set_message().
  */
 function form_example_tutorial_8_page_two_submit($form, &$form_state) {
   // Normally, some code would go here to alter the database with the data
-  // collected from the form. Instead sets a message with drupal_set_message()
+  // collected from the form. Instead sets a message with backdrop_set_message()
   // to validate that the code worked.
   $page_one_values = $form_state['page_values'][1];
-  drupal_set_message(t('The form has been submitted. name="@first @last", year of birth=@year_of_birth',
+    backdrop_set_message(t('The form has been submitted. name="@first @last", year of birth=@year_of_birth',
     array(
       '@first' => $page_one_values['first'],
       '@last' => $page_one_values['last'],
@@ -512,7 +512,7 @@ function form_example_tutorial_8_page_two_submit($form, &$form_state) {
   ));
 
   if (!empty($page_one_values['first2'])) {
-    drupal_set_message(t('Second name: name="@first @last", year of birth=@year_of_birth',
+      backdrop_set_message(t('Second name: name="@first @last", year of birth=@year_of_birth',
       array(
         '@first' => $page_one_values['first2'],
         '@last' => $page_one_values['last2'],
@@ -520,7 +520,7 @@ function form_example_tutorial_8_page_two_submit($form, &$form_state) {
       )
     ));
   }
-  drupal_set_message(t('And the favorite color is @color', array('@color' => $form_state['values']['color'])));
+    backdrop_set_message(t('And the favorite color is @color', array('@color' => $form_state['values']['color'])));
 
   // If we wanted to redirect on submission, set $form_state['redirect']. For
   // simple redirects, the value can be a string of the path to redirect to. For
@@ -529,7 +529,7 @@ function form_example_tutorial_8_page_two_submit($form, &$form_state) {
   // $form_state['redirect'] = 'node';
   //
   // For more complex redirects, this value can be set to an array of options to
-  // pass to drupal_goto(). For example, to redirect to /foo?bar=1#baz, one
+  // pass to backdrop_goto(). For example, to redirect to /foo?bar=1#baz, one
   // would specify the following:
   //
   // @code
@@ -694,13 +694,13 @@ function form_example_tutorial_9_submit($form, &$form_state) {
       )
     ) . ' ';
   }
-  drupal_set_message($output);
+  backdrop_set_message($output);
 }
 
 /**
  * Example 10: A form with a file upload field.
  *
- * This example allows the user to upload a file to Drupal which is stored
+ * This example allows the user to upload a file to backdrop which is stored
  * physically and with a reference in the database.
  *
  * @see form_example_tutorial_10_submit()
@@ -709,7 +709,7 @@ function form_example_tutorial_9_submit($form, &$form_state) {
  */
 function form_example_tutorial_10($form_state) {
   // If you are familiar with how browsers handle files, you know that
-  // enctype="multipart/form-data" is required. Drupal takes care of that, so
+  // enctype="multipart/form-data" is required. backdrop takes care of that, so
   // you don't need to include it yourself.
   $form['file'] = array(
     '#type' => 'file',
@@ -737,7 +737,7 @@ function form_example_tutorial_10_validate($form, &$form_state) {
   ));
   // If the file passed validation:
   if ($file) {
-    // Move the file into the Drupal file system.
+    // Move the file into the backdrop file system.
     if ($file = file_move($file, 'public://')) {
       // Save the file for use in the submit handler.
       $form_state['storage']['file'] = $file;
@@ -763,5 +763,5 @@ function form_example_tutorial_10_submit($form, &$form_state) {
   // Save file status.
   file_save($file);
   // Set a response to the user.
-  drupal_set_message(t('The form has been submitted and the image has been saved, filename: @filename.', array('@filename' => $file->filename)));
+  backdrop_set_message(t('The form has been submitted and the image has been saved, filename: @filename.', array('@filename' => $file->filename)));
 }

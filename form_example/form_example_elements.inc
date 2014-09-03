@@ -71,7 +71,7 @@
  * form_builder() has significant discussion of #process and #value_callback.
  * See also hook_element_info().
  *
- * system_element_info() contains the Drupal default element types, which can
+ * system_element_info() contains the Backdrop default element types, which can
  * also be used as examples.
  */
 function _form_example_element_info() {
