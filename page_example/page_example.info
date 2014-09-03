@@ -1,0 +1,7 @@
+name = Page example
+description = An example module showing how to define a page to be displayed to the user at a given URL.
+core = 7.x
+files[] = page_example.test
+package = 00 Example modules
+version = BACKDROP_VERSION
+backdrop = 1.x
