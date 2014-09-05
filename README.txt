@@ -37,8 +37,8 @@ do this:
 It has all manner of cross-linked references between the example code and the
 APIs being demonstrated.
 
-* http://drupalcode.org/project/examples.git allows you to browse the git
-repository for the Drupal Examples project.
+* https://github.com/cellear/backdrop-examples allows you to browse the git
+repository for the Backdrop Examples project.
 
 
 How To Install The Modules
@@ -51,13 +51,13 @@ How To Install The Modules
 
 3. Rebuild access permissions if you are prompted to.
 
-4. Profit!  The examples would appear in your Navigation menu if there was one;
-since we've removed the navigation menu in Backdrop they won't appear anywhere
-until somebody updates the code.
+4. Profit!  The examples would appear in your Navigation menu if there was one.
+(Since we've removed the navigation menu in Backdrop they won't appear anywhere
+until somebody updates the code.)
 
 Now you can read the code and its comments and see the result, experiment with
 it, and hopefully quickly grasp how things work.
 
 If you find a problem, incorrect comment, obsolete or improper code or such,
-please search for an issue about it at http://drupal.org/project/issues/examples
+please search for an issue about it at https://github.com/cellear/backdrop-examples/issues
 If there isn't already an issue for it, please create a new one.

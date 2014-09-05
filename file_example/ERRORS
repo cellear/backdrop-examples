@@ -1,0 +1,3 @@
+
+    Warning: class_implements(): Class FileExampleSessionStreamWrapper does not exist and could not be loaded in file_get_stream_wrappers() (line 136 of /Users/luke/Sites/2014-backdrop/backdrop-examples/core/includes/file.inc).
+    Warning: in_array() expects parameter 2 to be array, boolean given in file_get_stream_wrappers() (line 136 of /Users/luke/Sites/2014-backdrop/backdrop-examples/core/includes/file.inc).
